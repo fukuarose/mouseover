@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+			.box{
+				width: 600px;
+				height: 400px;
+				position:absolute;
+				top: 50%;
+				left: 50%;
+				margin: -200px 0 0 -300px;
+				border: 1px solid black;
+			}
+			/*div{
+				width: 200px;
+				height: 200px;
+				margin: 0px;	
+				background-codlor: green;
+				float: left;
+			}*/
+			ul{
+				list-style: none;
+			}
+			li{
+				width: 200px;
+				height: 200px;
+				float: left;
+				margin: 0px;
+			}
+			.box img{
+				width: 190px;
+				height: 190px;
+				margin: 5px;
+			}
+			.box ul li div{
+				width: 190px;
+				height: 190px;
+				background-color: rgba(0,0,0,.5);
+				text-align: center;
+				/*display: table;*/
+			}
+			#box1{position: absolute;top: 5px;left: 5px;display: none;}
+			#box2{position: absolute;top: 5px;left: 205px;display: none;}
+			#box3{position: absolute;top: 5px;left: 405px;display: none;}
+			#box4{position: absolute;top: 205px;left: 5px;display: none;}
+			#box5{position: absolute;top: 205px;left: 205px;display: none;}
+			#box6{position: absolute;top: 205px;left: 405px;display: none;}
+			h3,p{
+				line-height: 60px;
+			}
+		</style>
+		<script>
+			window.onload=function(){
+				var oLi=document.getElementsByTagName("li");
+				function $(id){return document.getElementById(id);}
+				var oDiv=document.getElementsByTagName("div");
+				oLi[0].onmouseover=function(){
+					$("box1").style.display="block";
+				}
+				oLi[0].onmouseout=function(){
+					$("box1").style.display="none";
+				}
+				oLi[1].onmouseover=function(){
+					$("box2").style.display="block";
+				}
+				oLi[1].onmouseout=function(){
+					$("box2").style.display="none";
+				}
+				oLi[2].onmouseover=function(){
+					$("box3").style.display="block";
+				}
+				oLi[2].onmouseout=function(){
+					$("box3").style.display="none";
+				}
+				oLi[3].onmouseover=function(){
+					$("box4").style.display="block";
+				}
+				oLi[3].onmouseout=function(){
+					$("box4").style.display="none";
+				}
+				oLi[4].onmouseover=function(){
+					$("box5").style.display="block";
+				}
+				oLi[4].onmouseout=function(){
+					$("box5").style.display="none";
+				}
+				oLi[5].onmouseover=function(){
+					$("box6").style.display="block";
+				}
+				oLi[5].onmouseout=function(){
+					$("box6").style.display="none";
+				}
+				
+				
+			
+			
+				
+				
+			}
+		</script>
+	</head>	
+	<body>	
+		<div class="box">
+			<ul>
+				<li><img src="img/class2.jpg">
+					<div id="box1">
+						<h3>标题</h3>
+						<p>内容</p>
+					</div>
+				</li>
+				<li><img src="img/class3.jpg">
+					<div id="box2">
+						<h3>标题</h3>
+						<p>内容</p>
+					</div>
+				</li>
+				<li><img src="img/class4.jpg">
+					<div id="box3">
+						<h3>标题</h3>
+						<p>内容</p>
+					</div>
+				</li>
+				<li><img src="img/class2.jpg">
+					<div id="box4">
+						<h3>标题</h3>
+						<p>内容</p>
+					</div>
+				</li>
+				<li><img src="img/class3.jpg">
+					<div id="box5">
+						<h3>标题</h3>
+						<p>内容</p>
+					</div>
+				</li>
+				<li><img src="img/class4.jpg">
+					<div id="box6">
+						<h3>标题</h3>
+						<p>内容</p>
+					</div>
+				</li>
+			</ul>
+		</div>	
+	</body>
+</html>

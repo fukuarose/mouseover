@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			.box{
+				width: 200px;
+				height: 400px;
+				border: 1px solid gray;
+				float: left;/*解决盒子边缘重叠问题*/
+				margin-left: -1px;
+				position: relative;/*解决层级问题，relative定位占空间，而absolute不占用空间*/
+				
+			}
+			.box:hover{
+				border: 1px solid orangered;
+				z-index:9;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		
+	</body>
+</html>

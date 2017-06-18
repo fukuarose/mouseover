@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			.box{
+				width: 350px;
+				height: 350px;
+				border: 1px solid black;
+				margin: 100px;
+				position: relative;
+			}
+			.small{
+				width: 350px;
+				height: 350px;
+				position: relative;
+			}
+			#mve{
+				width: 100px;
+				height: 100px;
+				background-color: rgba(0,0,0,.5);
+				position: absolute;
+				top: 0;
+				left: 0;
+				cursor: move; 
+				display: none;
+			}
+			.Bbox{
+				width: 450px;
+				height: 450px;
+				border: 1px solid black;
+				position: absolute;
+				top: 0;
+				left: 360px;
+				display: none;
+				overflow: hidden;
+			}
+			.Bbox img{
+				position: absolute;
+				top: 0;
+				left: 0;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box" id="box">
+			<div class="small">
+				<img src="img/001.jpg" alt="">
+				<span id="mve"></span>
+			</div>
+			<div class="Bbox"><img src="img/0001.jpg"></div>
+		</div>
+		
+	</body>
+</html>
+<script>
+	var toBig=document.getElementById("box");
+	var small=toBig.children[0];
+	var bigBox=toBig.children[1];
+	var span=small.children[1];
+	var pic=bigBox.children[0];
+//	alert(pic.tagName);
+	small.onmouseover=function(){
+		span.style.display="block";
+		bigBox.style.display="block";
+	}
+	small.onmouseout=function(){
+		span.style.display="none";
+		bigBox.style.display="none";
+	}
+	var x=0,y=0;
+	small.onmousemove=function(event){
+		var event=event||window.event;
+		x=event.clientX-this.offsetParent.offsetLeft-span.offsetWidth/2;
+		y=event.clientY-this.offsetParent.offsetTop-span.offsetHeight/2;
+		if(x<0){
+			x=0;
+		}else if(x>(small.offsetWidth-span.offsetWidth)){
+			x=small.offsetWidth-span.offsetWidth
+		}
+		if(y<0){
+			y=0;
+		}else if(y>(small.offsetHeight-span.offsetHeight)){
+			y=small.offsetHeight-span.offsetHeight;
+		}
+		span.style.left=x+"px";
+		span.style.top=y+"px";
+		pic.style.left=-x*(bigBox.offsetWidth/small.offsetWidth)+"px";
+		console.log(pic.style.left);
+		pic.style.top=-y*(bigBox.offsetHeight/small.offsetHeight)+"px";
+		
+	}
+</script>

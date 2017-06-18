@@ -1,0 +1,56 @@
+.pic {
+    width: 500px;
+    height: 500px;
+    overflow: hidden;
+    cursor: pointer;
+    border: 10px solid #333;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .8);
+    margin: 50px auto;
+    position: relative;
+}
+.pic .top, .pic .bottom {
+    width: 500px;
+    height: 500px;
+    overflow: hidden;
+    position: absolute;
+    transform: skew(-45deg);
+}
+.pic .top {
+    left: 0;
+    top: 0;
+    transform-origin: 100% 0;
+    transition:all 1s, transform 0s;
+}
+.pic .bottom {
+    right: 0;
+    bottom: 0;
+    transform-origin: 0 100%;
+    transition:all 1s ease-in, transform 0s;
+}
+.pic .top img, .pic .bottom img {
+    width: 100%;
+    height: 100%;
+    transform-origin: inherit;
+    transform: skew(45deg);
+}
+.pic:hover .top {
+    left: -20px;
+    top: -20px;
+}
+.pic:hover .bottom {
+    right: -20px;
+    bottom: -20px;
+}
+.pic span {
+    transform: rotate(-45deg);
+    transform-origin: 0 100%;
+    position: absolute;
+    font-size:20px;
+    bottom:-.5em;
+    opacity: 0;
+    transition: all 1s ease-in .2s;
+}
+.pic:hover span {
+    opacity: 1;
+    text-indent: 15em;
+}

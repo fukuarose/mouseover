@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			ul,ol{
+				list-style: none;
+			}
+			html,body{
+				width: 100%;
+				height: 100%;
+			}
+			ul{
+				width: 100%;
+				height: 100%;
+			}
+			ul li{
+				width: 100%;
+				height: 100%;
+			}
+			#ol{
+				
+				position: fixed;
+				top: 1px;
+				left: 50px;
+			}
+			#ol li{
+				width: 50px;
+				height: 50px;
+				border: 1px solid #000;
+				margin-top: -1px;
+			}
+		</style>
+		<script src="scrolltop.js"></script>
+	</head>
+	<body>
+		<ul id="ul">
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+			<li>6</li>
+			
+		</ul>
+		<ol id="ol">
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+			<li>6</li>
+			
+		</ol>
+	</body>
+</html>
+<script>
+	var ulBoxLi=$("ul").children;
+	var olBoxLi=$("ol").children;
+	var bg=["red","green","yellow","pink","lightcoral","#90EE90"];
+	var leader=0,target=0,timer=null;
+	for(var i=0;i<ulBoxLi.length;i++){
+		ulBoxLi[i].style.backgroundColor=bg[i];
+		olBoxLi[i].style.backgroundColor=bg[i];
+		olBoxLi[i].index=i;
+		olBoxLi[i].onclick=function(){
+			clearInterval(timer);
+			target=ulBoxLi[this.index].offsetTop;
+			timer=setInterval(function(){
+				leader=leader+(target-leader)/10;
+				window.scrollTo(0,leader);//屏幕滑动
+			},20)
+		}
+	}
+	
+</script>

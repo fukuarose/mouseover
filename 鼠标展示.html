@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+		*{
+			margin:0px;
+			padding: 0px;
+		}
+			#box{
+				width: 500px;
+				height: 500px;
+				border: 1px solid black;
+				margin: 20px auto;
+				background: url(img/01big.jpg) no-repeat top center;
+				overflow: hidden;
+			}
+			#b-top{
+				height: 400px;
+				/*background-color: re*/
+			}
+			#b-bottom{
+				height:100px;
+				background-color: pink;
+			}
+			ul{
+				overflow: hidden;
+			}
+			#b-bottom li{
+				list-style: none;
+				/*display: block;*/
+				float: left;
+				width: 90px;
+				height: 90px;
+				margin: 17px;
+			}
+		</style>
+		<script>
+			window.onload=function(){
+				var btp=document.getElementById("b-top");
+				function mouse(obj,bg){
+					var target=document.getElementById(obj);
+					target.onmouseover=function(){
+						btp.style.backgroundImage=bg;//不加引号因为他是变量
+					}
+				}
+				mouse("li1","url(img/01big.jpg)");
+				
+				mouse("li2","url(img/02big.jpg)");
+				mouse("li3","url(img/03big.jpg)");
+				mouse("li4","url(img/04big.jpg)");
+				
+			}
+		</script>
+	</head>
+	<body>
+		<div id="box">
+			<div id="b-top"></div>
+			<div id="b-bottom">
+				<ul>
+					<li id="li1"><img src="img/01.jpg"></li>
+					<li id="li2"><img src="img/02.jpg"></li>
+					<li id="li3"><img src="img/03.jpg"></li>
+					<li id="li4"><img src="img/04.jpg"></li>
+					
+				</ul>
+			</div>
+			
+		</div>
+	</body>
+</html>
